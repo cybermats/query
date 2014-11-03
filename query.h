@@ -144,8 +144,8 @@ namespace query {
             std::swap(_last, other._last);
         }
 
-        bool empty() {
-            return _first != _last;
+        bool empty() const {
+            return _first == _last;
         }
 
         template<typename QueryBuilder>
@@ -261,7 +261,7 @@ namespace query {
             std::swap(_end, other._end);
         }
 
-        bool empty() {
+        bool empty() const {
             return _begin == _end;
         }
 
@@ -279,7 +279,7 @@ namespace query {
 	/*************************************************************//**
 	 * where_query
 	 ****************************************************************/
-    template<typename InputIterator, typename Predicate, class A = std::allocator<typename InputIterator::value_type> >
+	template<typename InputType, typename Predicate, class A = std::allocator<typename InputType::value_type> >
     class where_query {
     public:
         typedef A allocator_type;
@@ -289,7 +289,8 @@ namespace query {
         typedef typename A::difference_type difference_type;
         typedef typename A::size_type size_type;
 
-        typedef where_query<InputIterator, Predicate, A> this_type;
+		typedef where_query<InputType, Predicate, A> this_type;
+		typedef typename InputType::iterator input_iterator;
 
         class iterator {
         public:
@@ -299,8 +300,8 @@ namespace query {
             typedef typename A::pointer pointer;
             typedef std::input_iterator_tag iterator_category;
 
-            iterator(InputIterator current,
-                    InputIterator last,
+			iterator(input_iterator current,
+					input_iterator last,
                     Predicate pred)
                     : _current(current)
                     , _last(last)
@@ -352,20 +353,19 @@ namespace query {
             }
 
         private:
-            InputIterator _current;
-            InputIterator _last;
+			input_iterator _current;
+			input_iterator _last;
             Predicate _pred;
         };
 
         where_query(
-                const InputIterator &first,
-                const InputIterator &last,
+                const InputType &container,
                 const Predicate &pred)
-                : _first(first), _last(last), _pred(pred) {
+				: _container(container), _pred(pred) {
         }
 
         where_query(const where_query &other)
-                : _first(other._first), _last(other._last), _pred(other._pred) {
+				: _container(other._container), _pred(other._pred) {
         }
 
         ~where_query() {
@@ -378,21 +378,20 @@ namespace query {
         bool operator!=(const where_query &) const;
 
         iterator begin() const {
-            return iterator(_first, _last, _pred);
+			return iterator(_container.begin(), _container.end(), _pred);
         }
 
         iterator end() const {
-            return iterator(_last, _last, _pred);
+			return iterator(_container.end(), _container.end(), _pred);
         }
 
         void swap(where_query &other) {
-            std::swap(_first, other._first);
-            std::swap(_last, other._last);
+			std::swap(_container, other._container);
             std::swap(_pred, other._pred);
         }
 
-        bool empty() {
-            return _first != _last;
+        bool empty() const {
+			return _container.empty();
         }
 
         template<typename QueryBuilder>
@@ -401,8 +400,7 @@ namespace query {
         }
 
     private:
-        InputIterator _first;
-        InputIterator _last;
+        InputType _container;
         Predicate _pred;
     };
 
@@ -416,8 +414,8 @@ namespace query {
         }
 
         template<typename Query>
-        where_query<typename Query::iterator, Predicate> build(Query query) const {
-            return where_query<typename Query::iterator, Predicate>(query.begin(), query.end(), _pred);
+        where_query<Query, Predicate> build(const Query& query) const {
+            return where_query<typename Query, Predicate>(query, _pred);
 
         }
     private:
@@ -428,10 +426,10 @@ namespace query {
 	/*************************************************************//**
 	 * select_query
 	 ****************************************************************/
-    template<typename InputIterator, typename Generator>
+    template<typename InputType, typename Generator>
     class select_query {
     public:
-        static typename InputIterator::value_type get_source();
+		static typename InputType::value_type get_source();
         static Generator get_generator();
 
         typedef decltype(get_generator()(get_source())) raw_value_type;
@@ -445,7 +443,8 @@ namespace query {
         typedef typename A::difference_type difference_type;
         typedef typename A::size_type size_type;
 
-        typedef select_query<InputIterator, Generator> this_type;
+		typedef select_query<InputType, Generator> this_type;
+		typedef typename InputType::iterator input_iterator;
 
         class iterator {
         public:
@@ -455,8 +454,8 @@ namespace query {
             typedef typename A::pointer pointer;
             typedef std::input_iterator_tag iterator_category;
 
-            iterator(InputIterator current,
-                    InputIterator last,
+			iterator(input_iterator current,
+					input_iterator last,
                     Generator generator)
                     : _current(current)
                     , _last(last)
@@ -496,20 +495,19 @@ namespace query {
             }
 
         private:
-            InputIterator _current;
-            InputIterator _last;
+			input_iterator _current;
+			input_iterator _last;
             Generator _generator;
         };
 
         select_query(
-                const InputIterator &first,
-                const InputIterator &last,
+                const InputType &container,
                 const Generator &generator)
-                : _first(first), _last(last), _generator(generator) {
+				: _container(container), _generator(generator) {
         }
 
         select_query(const select_query &other)
-                : _first(other._first), _last(other._last), _generator(other._generator) {
+				: _container(other._container), _generator(other._generator) {
         }
 
         ~select_query() {
@@ -522,31 +520,29 @@ namespace query {
         bool operator!=(const select_query &) const;
 
         iterator begin() const {
-            return iterator(_first, _last, _generator);
+			return iterator(_container.begin(), _container.end(), _generator);
         }
 
         iterator end() const {
-            return iterator(_last, _last, _generator);
+			return iterator(_container.end(), _container.end(), _generator);
         }
 
         void swap(select_query &other) {
-            std::swap(_first, other._first);
-            std::swap(_last, other._last);
+			std::swap(_container, other._container);
             std::swap(_generator, other._generator);
         }
 
-        bool empty() {
-            return _first != _last;
+        bool empty() const {
+            return _container.empty();
         }
 
         template<typename QueryBuilder>
-        typename get_builtup_type<QueryBuilder, this_type>::type operator>>(QueryBuilder qb) const {
+        typename get_builtup_type<QueryBuilder, this_type>::type operator>>(const QueryBuilder& qb) const {
             return qb.build(*this);
         }
 
     private:
-        InputIterator _first;
-        InputIterator _last;
+		InputType _container;
         Generator _generator;
     };
 
@@ -563,10 +559,10 @@ namespace query {
         }
 
         template<typename Query>
-        select_query<typename Query::iterator, Generator>
-        build(Query query) const {
+        select_query<typename Query, Generator>
+        build(const Query& query) const {
 			return select_query<
-                    typename Query::iterator, Generator>(query.begin(), query.end(), _generator);
+                    typename Query, Generator>(query, _generator);
         }
     private:
         Generator _generator;
@@ -589,7 +585,7 @@ namespace query {
 	/*************************************************************//**
 	 * orderby_query
 	 ****************************************************************/
-    template<typename InputIterator, typename Predicate, class A = std::allocator<typename InputIterator::value_type> >
+	template<typename InputType, typename Predicate, class A = std::allocator<typename InputType::value_type> >
     class orderby_query {
     public:
         typedef A allocator_type;
@@ -599,7 +595,8 @@ namespace query {
         typedef typename A::difference_type difference_type;
         typedef typename A::size_type size_type;
 
-        typedef orderby_query<InputIterator, Predicate, A> this_type;
+		typedef orderby_query<InputType, Predicate, A> this_type;
+		typedef typename InputType::iterator input_iterator;
         typedef typename std::vector<value_type>::iterator output_iterator;
 
 
@@ -647,12 +644,10 @@ namespace query {
         };
 
         orderby_query(
-                const InputIterator &first,
-                const InputIterator &last,
+                const InputType &container,
                 const Predicate &pred,
                 bool sort_ascending)
-                : _first(first)
-                , _last(last)
+				: _container(container)
                 , _pred(pred)
                 , _sort_ascending(sort_ascending)
                 , _sorted_values()
@@ -661,8 +656,7 @@ namespace query {
         }
 
         orderby_query(const orderby_query &other)
-                : _first(other._first)
-                , _last(other._last)
+				: _container(other._container)
                 , _pred(other._pred)
                 , _sort_ascending(other._sort_ascending)
                 , _sorted_values(other._sorted_values)
@@ -693,20 +687,19 @@ namespace query {
         }
 
         void swap(orderby_query &other) {
-            std::swap(_first, other._first);
-            std::swap(_last, other._last);
+			std::swap(_container, other._container);
             std::swap(_pred, other._pred);
             std::swap(_sort_ascending, other._sort_ascending);
             std::swap(_sorted_values, other._sorted_values);
             std::swap(_initialized, other._initialized);
         }
 
-        bool empty() {
-            return _first != _last;
+        bool empty() const {
+            return _container.emtpy();
         }
 
         template<typename QueryBuilder>
-        typename get_builtup_type<QueryBuilder, this_type>::type operator>>(QueryBuilder qb) const {
+        typename get_builtup_type<QueryBuilder, this_type>::type operator>>(const QueryBuilder& qb) const {
             return qb.build(*this);
         }
 
@@ -725,11 +718,11 @@ namespace query {
         {
             _initialized = true;
             _sorted_values.clear();
-            if(_first == _last)
+            if(_container.empty())
                 return;
 
             _sorted_values.reserve(16U);
-            _sorted_values.insert(_sorted_values.end(), _first, _last);
+            _sorted_values.insert(_sorted_values.end(), _container.begin(), _container.end());
             if(_sort_ascending) {
                 std::sort(
                         _sorted_values.begin(),
@@ -747,8 +740,7 @@ namespace query {
             }
         }
 
-        InputIterator _first;
-        InputIterator _last;
+        InputType _container;
         Predicate _pred;
         bool _sort_ascending;
         mutable std::vector<value_type> _sorted_values;
@@ -768,8 +760,8 @@ namespace query {
         }
 
         template<typename Query>
-        orderby_query<typename Query::iterator, Predicate> build(Query query) const {
-            return orderby_query<typename Query::iterator, Predicate>(query.begin(), query.end(), _pred, _sort_ascending);
+        orderby_query<Query, Predicate> build(const Query& query) const {
+            return orderby_query<Query, Predicate>(query, _pred, _sort_ascending);
 
         }
     private:
@@ -781,8 +773,8 @@ namespace query {
 	/*************************************************************//**
 	 * zip_with_query
 	 ****************************************************************/
-    template<typename InputIterator, typename OtherIterator,
-            class A = std::allocator<std::pair<typename InputIterator::value_type, typename OtherIterator::value_type > > >
+    template<typename InputType, typename OtherInputType,
+		class A = std::allocator<std::pair<typename InputType::value_type, typename OtherInputType::value_type > > >
     class zip_with_query {
     public:
         typedef A allocator_type;
@@ -792,7 +784,9 @@ namespace query {
         typedef typename A::difference_type difference_type;
         typedef typename A::size_type size_type;
 
-        typedef zip_with_query<InputIterator, OtherIterator, A> this_type;
+        typedef zip_with_query<InputType, OtherInputType, A> this_type;
+		typedef typename InputType::iterator input_iterator;
+		typedef typename OtherInputType::iterator other_input_iterator;
 
         class iterator {
         public:
@@ -802,8 +796,8 @@ namespace query {
             typedef typename A::pointer pointer;
             typedef std::input_iterator_tag iterator_category;
 
-            iterator(InputIterator current,
-                    OtherIterator other_current)
+			iterator(input_iterator current,
+					other_input_iterator other_current)
                     : _current(current)
                     , _other_current(other_current)
             {
@@ -836,27 +830,21 @@ namespace query {
             }
 
         private:
-            InputIterator _current;
-            OtherIterator _other_current;
+            input_iterator _current;
+			other_input_iterator _other_current;
         };
 
         zip_with_query(
-                const InputIterator &first,
-                const InputIterator &last,
-                const OtherIterator &other_first,
-                const OtherIterator &other_last)
-                : _first(first)
-                , _last(last)
-                , _other_first(other_first)
-                , _other_last(other_last)
+                const InputType &container,
+                const OtherInputType &otherContainer)
+                : _container(container)
+                , _otherContainer(otherContainer)
         {
         }
 
         zip_with_query(const zip_with_query &other)
-                : _first(other._first)
-                , _last(other._last)
-                , _other_first(other._other_first)
-                , _other_last(other._other_last)
+				: _container(other._container)
+				, _otherContainer(other._otherContainer)
         {
         }
 
@@ -870,60 +858,50 @@ namespace query {
         bool operator!=(const zip_with_query &) const;
 
         iterator begin() const {
-            return iterator(_first, _other_first);
+            return iterator(_container.begin(), _otherContainer.begin());
         }
 
         iterator end() const {
-            return iterator(_last, _other_last);
+			return iterator(_container.end(), _otherContainer.end());
         }
 
         void swap(zip_with_query &other) {
-            std::swap(_first, other._first);
-            std::swap(_last, other._last);
-            std::swap(_other_first, other._other_first);
-            std::swap(_other_last, other._other_last);
+			std::swap(_container, other._container);
+			std::swap(_otherContainer, other._otherContainer);
         }
 
-        bool empty() {
-            return _first == _last ||
-                   _other_first == _other_last;
+        bool empty() const {
+			return _container.empty() || _otherContainer.empty();
         }
 
         template<typename QueryBuilder>
-        typename get_builtup_type<QueryBuilder, this_type>::type operator>>(QueryBuilder qb) const {
+        typename get_builtup_type<QueryBuilder, this_type>::type operator>>(const QueryBuilder& qb) const {
             return qb.build(*this);
         }
 
     private:
-        InputIterator _first;
-        InputIterator _last;
-        OtherIterator _other_first;
-        OtherIterator _other_last;
+        InputType _container;
+        OtherInputType _otherContainer;
     };
 
 	/*************************************************************//**
 	 * zip_with_query_builder
 	 ****************************************************************/
-    template<typename OtherIterator>
+    template<typename OtherType>
     class zip_with_query_builder {
     public:
 
-        zip_with_query_builder(OtherIterator other_first, OtherIterator other_last)
-                : _other_first(other_first), _other_last(other_last) {
+        zip_with_query_builder(OtherType other)
+                : _other(other) {
         }
 
         template<typename Query>
-        zip_with_query<typename Query::iterator, OtherIterator> build(Query query) const {
-            return zip_with_query<typename Query::iterator, OtherIterator>(
-                    query.begin(),
-                    query.end(),
-                    _other_first,
-                    _other_last);
+        zip_with_query<Query, OtherType> build(const Query& query) const {
+            return zip_with_query<Query, OtherType>(query, _other);
         }
 
     private:
-        OtherIterator _other_first;
-        OtherIterator _other_last;
+        OtherType _other;
     };
 
 
@@ -998,18 +976,9 @@ orderby(Predicate pred, bool sort_ascending = true)
  * zip_with
  ****************************************************************/
 template<typename OtherQuery>
-query::zip_with_query_builder<typename OtherQuery::iterator>
-zip_with(OtherQuery other_query)
+query::zip_with_query_builder<OtherQuery>
+zip_with(const OtherQuery& other_query)
 {
-    return query::zip_with_query_builder<typename OtherQuery::iterator>(other_query.begin(), other_query.end());
+    return query::zip_with_query_builder<OtherQuery>(other_query);
 }
 
-/*************************************************************//**
- * zip_with
- ****************************************************************/
-template<typename OtherIterator>
-query::zip_with_query_builder<OtherIterator>
-zip_with(OtherIterator first, OtherIterator last)
-{
-    return query::zip_with_query_builder<OtherIterator>(first, last);
-}

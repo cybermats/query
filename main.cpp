@@ -24,11 +24,11 @@ int main() {
 
 
 	auto q =
-				lift(hello.begin(), hello.end())
-		//            >> zip_with(from_range_infinite(0))
-		//            >> orderby(sort_pairs, false)
-		//            >> select([](std::pair<char, int> item){return item.first;});
-		>> select([](char i){return i; });
+		lift(hello.begin(), hello.end())
+		>> zip_with(from_range_infinite(0))
+		>> orderby(sort_pairs, false)
+		>> select([](std::pair<char, int> item){return item.first; });
+//		>> select([](char i){return i; });
 
 	auto it = q.begin();
 	auto v = *it;
