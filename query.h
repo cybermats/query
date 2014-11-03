@@ -2,9 +2,15 @@
 #include <iterator>
 #include <cassert>
 #include <vector>
+#include <algorithm>
+
+#define CMAKE_TYPENAME
 
 namespace query {
 
+	/*************************************************************//**
+	 * get_builder
+	 ****************************************************************/
     template<typename QueryBuilder, typename Query>
     struct get_builtup_type {
         static QueryBuilder get_builder();
@@ -14,6 +20,9 @@ namespace query {
         typedef decltype(get_builder().build(get_query())) type;
     };
 
+	/*************************************************************//**
+	 * function_traits
+	 ****************************************************************/
     template<typename Function, typename Arg>
     struct function_traits
     {
@@ -22,6 +31,9 @@ namespace query {
         typedef decltype(get_function()(get_argument())) return_type;
     };
 
+	/*************************************************************//**
+	 * base_query
+	 ****************************************************************/
     class base_query
     {
     protected:
@@ -31,6 +43,9 @@ namespace query {
         ~base_query() {}
     };
 
+	/*************************************************************//**
+	 * base_query_builder
+	 ****************************************************************/
     class base_query_builder
     {
     protected:
@@ -41,6 +56,9 @@ namespace query {
     };
 
 
+	/*************************************************************//**
+	 * simple_query
+	 ****************************************************************/
     template<typename InputIterator, class A = std::allocator<typename InputIterator::value_type> >
     class simple_query {
     public:
@@ -140,6 +158,9 @@ namespace query {
         InputIterator _last;
     };
 
+	/*************************************************************//**
+	 * simple_query_builder
+	 ****************************************************************/
     class simple_query_builder {
     public:
 
@@ -151,24 +172,27 @@ namespace query {
     };
 
 
+	/*************************************************************//**
+	 * int_query
+	 ****************************************************************/
     class int_query {
     public:
         typedef std::allocator<int> A;
         typedef A allocator_type;
-        typedef typename A::value_type value_type;
-        typedef typename A::reference reference;
-        typedef typename A::const_reference const_reference;
-        typedef typename A::difference_type difference_type;
-        typedef typename A::size_type size_type;
+		typedef CMAKE_TYPENAME A::value_type value_type;
+		typedef CMAKE_TYPENAME A::reference reference;
+		typedef CMAKE_TYPENAME A::const_reference const_reference;
+		typedef CMAKE_TYPENAME A::difference_type difference_type;
+		typedef CMAKE_TYPENAME A::size_type size_type;
 
         typedef int_query this_type;
 
         class iterator {
         public:
-            typedef typename A::value_type value_type;
-            typedef typename A::difference_type difference_type;
-            typedef typename A::reference reference;
-            typedef typename A::pointer pointer;
+			typedef CMAKE_TYPENAME A::value_type value_type;
+			typedef CMAKE_TYPENAME A::difference_type difference_type;
+			typedef CMAKE_TYPENAME A::reference reference;
+			typedef CMAKE_TYPENAME A::pointer pointer;
             typedef std::input_iterator_tag iterator_category;
 
             iterator(int current)
@@ -252,6 +276,9 @@ namespace query {
     };
 
 
+	/*************************************************************//**
+	 * where_query
+	 ****************************************************************/
     template<typename InputIterator, typename Predicate, class A = std::allocator<typename InputIterator::value_type> >
     class where_query {
     public:
@@ -379,7 +406,10 @@ namespace query {
         Predicate _pred;
     };
 
-    template<typename Predicate>
+	/*************************************************************//**
+	 * where_query_builder
+	 ****************************************************************/
+	template<typename Predicate>
     class where_query_builder {
     public:
         where_query_builder(Predicate pred) : _pred(pred) {
@@ -395,6 +425,9 @@ namespace query {
 
     };
 
+	/*************************************************************//**
+	 * select_query
+	 ****************************************************************/
     template<typename InputIterator, typename Generator>
     class select_query {
     public:
@@ -517,6 +550,9 @@ namespace query {
         Generator _generator;
     };
 
+	/*************************************************************//**
+	 * select_query_builder
+	 ****************************************************************/
     template<typename Generator>
     class select_query_builder {
     public:
@@ -529,15 +565,17 @@ namespace query {
         template<typename Query>
         select_query<typename Query::iterator, Generator>
         build(Query query) const {
-            return select_query<
+			return select_query<
                     typename Query::iterator, Generator>(query.begin(), query.end(), _generator);
-
         }
     private:
         Generator _generator;
 
     };
 
+	/*************************************************************//**
+	 * sorting_query_builder
+	 ****************************************************************/
     class sorting_query_builder
     {
     protected:
@@ -548,6 +586,9 @@ namespace query {
     };
 
 
+	/*************************************************************//**
+	 * orderby_query
+	 ****************************************************************/
     template<typename InputIterator, typename Predicate, class A = std::allocator<typename InputIterator::value_type> >
     class orderby_query {
     public:
@@ -666,12 +707,6 @@ namespace query {
 
         template<typename QueryBuilder>
         typename get_builtup_type<QueryBuilder, this_type>::type operator>>(QueryBuilder qb) const {
-            /*
-            static_assert(
-                    std::is_convertible<QueryBuilder, sorting_query_builder>::value,
-                    "orderby is not allowed to follow orderby"
-            );
-*/
             return qb.build(*this);
         }
 
@@ -720,6 +755,9 @@ namespace query {
         mutable bool _initialized;
     };
 
+	/*************************************************************//**
+	 * orderby_query_builder
+	 ****************************************************************/
     template<typename Predicate>
     class orderby_query_builder : public sorting_query_builder {
     public:
@@ -740,6 +778,9 @@ namespace query {
     };
 
 
+	/*************************************************************//**
+	 * zip_with_query
+	 ****************************************************************/
     template<typename InputIterator, typename OtherIterator,
             class A = std::allocator<std::pair<typename InputIterator::value_type, typename OtherIterator::value_type > > >
     class zip_with_query {
@@ -860,6 +901,9 @@ namespace query {
         OtherIterator _other_last;
     };
 
+	/*************************************************************//**
+	 * zip_with_query_builder
+	 ****************************************************************/
     template<typename OtherIterator>
     class zip_with_query_builder {
     public:
@@ -885,6 +929,10 @@ namespace query {
 
 }
 
+
+/*************************************************************//**
+ * lift
+ ****************************************************************/
 template<typename InputIterator>
 query::simple_query<InputIterator>
 lift(InputIterator first, InputIterator last)
@@ -892,21 +940,33 @@ lift(InputIterator first, InputIterator last)
     return query::simple_query<InputIterator>(first, last);
 }
 
+/*************************************************************//**
+ * from_range
+ ****************************************************************/
 query::int_query from_range(int begin, int end)
 {
     return query::int_query(begin, end);
 }
 
+/*************************************************************//**
+ * from_range_infinite
+ ****************************************************************/
 query::int_query from_range_infinite(int begin)
 {
     return query::int_query(begin, begin - 1);
 }
 
+/*************************************************************//**
+ * pass_through
+ ****************************************************************/
 query::simple_query_builder pass_through()
 {
     return query::simple_query_builder();
 }
 
+/*************************************************************//**
+ * where
+ ****************************************************************/
 template<typename Predicate>
 query::where_query_builder<Predicate>
 where(Predicate pred)
@@ -914,6 +974,9 @@ where(Predicate pred)
     return query::where_query_builder<Predicate>(pred);
 }
 
+/*************************************************************//**
+ * select
+ ****************************************************************/
 template<typename Generator>
 query::select_query_builder<Generator>
 select(Generator generator)
@@ -921,6 +984,9 @@ select(Generator generator)
     return query::select_query_builder<Generator>(generator);
 }
 
+/*************************************************************//**
+ * orderby
+ ****************************************************************/
 template<typename Predicate>
 query::orderby_query_builder<Predicate>
 orderby(Predicate pred, bool sort_ascending = true)
@@ -928,6 +994,9 @@ orderby(Predicate pred, bool sort_ascending = true)
     return query::orderby_query_builder<Predicate>(pred, sort_ascending);
 }
 
+/*************************************************************//**
+ * zip_with
+ ****************************************************************/
 template<typename OtherQuery>
 query::zip_with_query_builder<typename OtherQuery::iterator>
 zip_with(OtherQuery other_query)
@@ -935,6 +1004,9 @@ zip_with(OtherQuery other_query)
     return query::zip_with_query_builder<typename OtherQuery::iterator>(other_query.begin(), other_query.end());
 }
 
+/*************************************************************//**
+ * zip_with
+ ****************************************************************/
 template<typename OtherIterator>
 query::zip_with_query_builder<OtherIterator>
 zip_with(OtherIterator first, OtherIterator last)
