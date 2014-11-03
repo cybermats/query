@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <iostream>
-
+#include <string>
 
 struct Foo
 {
@@ -23,19 +23,25 @@ int main() {
     std::string hello = "Hello, World!";
 
 
-    auto q =
-            lift(hello.begin(), hello.end())
-            >> zip_with(from_range_infinite(0))
-            >> orderby(sort_pairs, false)
-            >> select([](std::pair<char, int> item){return item.first;});
+	auto q =
+				lift(hello.begin(), hello.end())
+		//            >> zip_with(from_range_infinite(0))
+		//            >> orderby(sort_pairs, false)
+		//            >> select([](std::pair<char, int> item){return item.first;});
+		>> select([](char i){return i; });
 
-    std::string rev(q.begin(), q.end());
+	auto it = q.begin();
+	auto v = *it;
+	auto sit = ++it;
+
+
+//    std::string rev(q.begin(), q.end());
 
 
     for(auto i : q)
         std::cout << i << std::endl;
 
-    std::cout << rev << std::endl;
+//    std::cout << rev << std::endl;
 
     return 0;
 }
