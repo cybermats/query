@@ -35,13 +35,13 @@ int main() {
 	auto sit = ++it;
 
 
-//    std::string rev(q.begin(), q.end());
 
 
     for(auto i : q)
         std::cout << i << std::endl;
 
-//    std::cout << rev << std::endl;
+	std::string rev(q.begin(), q.end());
+	std::cout << rev << std::endl;
 
     return 0;
 }

@@ -79,7 +79,7 @@ namespace query {
             typedef typename A::pointer pointer;
             typedef std::input_iterator_tag iterator_category;
 
-            iterator(InputIterator current)
+            iterator(const InputIterator& current)
                     : _current(current) {
             }
 
@@ -149,7 +149,7 @@ namespace query {
         }
 
         template<typename QueryBuilder>
-        typename get_builtup_type<QueryBuilder, this_type>::type operator>>(QueryBuilder qb) const {
+        typename get_builtup_type<QueryBuilder, this_type>::type operator>>(const QueryBuilder& qb) const {
             return qb.build(*this);
         }
 
@@ -165,7 +165,7 @@ namespace query {
     public:
 
         template<typename Query>
-        simple_query<typename Query::iterator> build(Query query) const {
+        simple_query<typename Query::iterator> build(const Query& query) const {
             return simple_query<typename Query::iterator>(query.begin(), query.end());
 
         }
@@ -266,7 +266,7 @@ namespace query {
         }
 
         template<typename QueryBuilder>
-        typename get_builtup_type<QueryBuilder, this_type>::type operator>>(QueryBuilder qb) const {
+        typename get_builtup_type<QueryBuilder, this_type>::type operator>>(const QueryBuilder& qb) const {
             return qb.build(*this);
         }
 
@@ -300,9 +300,9 @@ namespace query {
             typedef typename A::pointer pointer;
             typedef std::input_iterator_tag iterator_category;
 
-			iterator(input_iterator current,
-					input_iterator last,
-                    Predicate pred)
+			iterator(const input_iterator& current,
+					const input_iterator& last,
+                    const Predicate& pred)
                     : _current(current)
                     , _last(last)
                     , _pred(pred)
@@ -395,7 +395,7 @@ namespace query {
         }
 
         template<typename QueryBuilder>
-        typename get_builtup_type<QueryBuilder, this_type>::type operator>>(QueryBuilder qb) const {
+        typename get_builtup_type<QueryBuilder, this_type>::type operator>>(const QueryBuilder& qb) const {
             return qb.build(*this);
         }
 
@@ -410,7 +410,7 @@ namespace query {
 	template<typename Predicate>
     class where_query_builder {
     public:
-        where_query_builder(Predicate pred) : _pred(pred) {
+        where_query_builder(const Predicate& pred) : _pred(pred) {
         }
 
         template<typename Query>
@@ -454,9 +454,9 @@ namespace query {
             typedef typename A::pointer pointer;
             typedef std::input_iterator_tag iterator_category;
 
-			iterator(input_iterator current,
-					input_iterator last,
-                    Generator generator)
+			iterator(const input_iterator& current,
+					const input_iterator& last,
+                    const Generator& generator)
                     : _current(current)
                     , _last(last)
                     , _generator(generator)
@@ -555,7 +555,7 @@ namespace query {
 
         typedef char output_type;
 
-        select_query_builder(Generator generator) : _generator(generator) {
+        select_query_builder(const Generator& generator) : _generator(generator) {
         }
 
         template<typename Query>
@@ -608,7 +608,7 @@ namespace query {
             typedef typename A::pointer pointer;
             typedef std::input_iterator_tag iterator_category;
 
-            iterator(output_iterator current)
+            iterator(const output_iterator& current)
                     : _current(current)
             {
             }
@@ -753,7 +753,7 @@ namespace query {
     template<typename Predicate>
     class orderby_query_builder : public sorting_query_builder {
     public:
-        orderby_query_builder(Predicate pred, bool sort_ascending)
+        orderby_query_builder(const Predicate& pred, bool sort_ascending)
                 : _pred(pred)
                 , _sort_ascending(sort_ascending)
         {
@@ -796,8 +796,8 @@ namespace query {
             typedef typename A::pointer pointer;
             typedef std::input_iterator_tag iterator_category;
 
-			iterator(input_iterator current,
-					other_input_iterator other_current)
+			iterator(const input_iterator& current,
+					const other_input_iterator& other_current)
                     : _current(current)
                     , _other_current(other_current)
             {
@@ -891,7 +891,7 @@ namespace query {
     class zip_with_query_builder {
     public:
 
-        zip_with_query_builder(OtherType other)
+        zip_with_query_builder(const OtherType& other)
                 : _other(other) {
         }
 
@@ -913,7 +913,7 @@ namespace query {
  ****************************************************************/
 template<typename InputIterator>
 query::simple_query<InputIterator>
-lift(InputIterator first, InputIterator last)
+lift(const InputIterator& first, const InputIterator& last)
 {
     return query::simple_query<InputIterator>(first, last);
 }
@@ -947,7 +947,7 @@ query::simple_query_builder pass_through()
  ****************************************************************/
 template<typename Predicate>
 query::where_query_builder<Predicate>
-where(Predicate pred)
+where(const Predicate& pred)
 {
     return query::where_query_builder<Predicate>(pred);
 }
@@ -957,7 +957,7 @@ where(Predicate pred)
  ****************************************************************/
 template<typename Generator>
 query::select_query_builder<Generator>
-select(Generator generator)
+select(const Generator& generator)
 {
     return query::select_query_builder<Generator>(generator);
 }
@@ -967,7 +967,7 @@ select(Generator generator)
  ****************************************************************/
 template<typename Predicate>
 query::orderby_query_builder<Predicate>
-orderby(Predicate pred, bool sort_ascending = true)
+orderby(const Predicate pred, bool sort_ascending = true)
 {
     return query::orderby_query_builder<Predicate>(pred, sort_ascending);
 }
