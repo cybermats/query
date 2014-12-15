@@ -6,7 +6,12 @@
     </generated>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ab82c1a-49f1-45f1-9804-50142e98992a" name="Default" comment="" />
+    <list default="true" id="9ab82c1a-49f1-45f1-9804-50142e98992a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/query.h" afterPath="$PROJECT_DIR$/query.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="query.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,92 +25,40 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DaemonCodeAnalyzer">
-    <disable_hints />
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="query" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34020618" vertical-offset="165" max-vertical-offset="705">
-              <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+              <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="query.h" pinned="false" current-in-tab="false">
+      <file leaf-file-name="query.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/query.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="13114" max-vertical-offset="14220">
-              <caret line="902" column="0" selection-start-line="902" selection-start-column="0" selection-end-line="902" selection-end-column="0" />
+            <state vertical-scroll-proportion="2.1191406" vertical-offset="10240" max-vertical-offset="14835">
+              <caret line="755" column="8" selection-start-line="755" selection-start-column="8" selection-end-line="755" selection-end-column="8" />
               <folding>
                 <element signature="e#13#32#0" expanded="true" />
-                <element signature="e#102#141#0" expanded="true" />
-                <element signature="e#336#369#0" expanded="true" />
-                <element signature="e#979#1066#0" expanded="true" />
-                <element signature="e#3497#3520#0" expanded="true" />
-                <element signature="e#3811#3827#0" expanded="true" />
-                <element signature="e#6357#6380#0" expanded="true" />
-                <element signature="e#6601#6708#0" expanded="true" />
-                <element signature="e#10063#10086#0" expanded="true" />
-                <element signature="e#10352#10372#0" expanded="true" />
-                <element signature="e#10504#10520#0" expanded="true" />
-                <element signature="e#10779#10823#0" expanded="true" />
-                <element signature="e#14164#14187#0" expanded="true" />
-                <element signature="e#14458#14478#0" expanded="true" />
-                <element signature="e#14663#14679#0" expanded="true" />
-                <element signature="e#15234#15341#0" expanded="true" />
-                <element signature="e#18761#18784#0" expanded="true" />
-                <element signature="e#20622#20642#0" expanded="true" />
-                <element signature="e#20904#20920#0" expanded="true" />
-                <element signature="e#21230#21402#0" expanded="true" />
-                <element signature="e#24715#24738#0" expanded="true" />
-                <element signature="e#25050#25074#0" expanded="true" />
-                <element signature="e#25305#25321#0" expanded="true" />
-                <element signature="e#25740#25764#0" expanded="true" />
-                <element signature="e#26203#26223#0" expanded="true" />
-                <element signature="e#26353#26373#0" expanded="true" />
-                <element signature="e#26516#26536#0" expanded="true" />
-                <element signature="e#26716#26737#0" expanded="true" />
-                <element signature="e#26958#26982#0" expanded="true" />
+                <element signature="e#11869#11885#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bindquery.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bindquery.h">
+      <file leaf-file-name="string" pinned="false" current-in-tab="false">
+        <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="4845">
-              <caret line="48" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-              <folding>
-                <element signature="e#13#32#0" expanded="true" />
-                <element signature="e#590#623#0" expanded="true" />
-                <element signature="e#816#849#0" expanded="true" />
-                <element signature="e#969#1103#0" expanded="true" />
-                <element signature="e#6718#6741#0" expanded="true" />
-                <element signature="e#7096#7139#0" expanded="true" />
-                <element signature="e#7633#7649#0" expanded="true" />
-                <element signature="e#7759#7775#0" expanded="true" />
-                <element signature="e#8132#8148#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="function_traits.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/function_traits.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="645" max-vertical-offset="1035">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="32145" max-vertical-offset="63810">
+              <caret line="2143" column="0" selection-start-line="2143" selection-start-column="0" selection-end-line="2143" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -121,11 +74,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/query.h" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+      </list>
+    </option>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="20" />
-    <option name="y" value="42" />
+    <option name="x" value="29" />
+    <option name="y" value="23" />
     <option name="width" value="1400" />
-    <option name="height" value="834" />
+    <option name="height" value="873" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -141,7 +105,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="Cidr.FilesView" proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -153,7 +117,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Cidr.FilesView">
+      <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
@@ -180,15 +144,15 @@
     <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager" selected="Application.query">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="query" TARGET_NAME="query" CONFIG_NAME="Debug">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="query" TARGET_NAME="query" CONFIG_NAME="Debug">
       <envs />
       <method />
     </configuration>
@@ -216,29 +180,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="20" y="42" width="1400" height="834" extended-state="0" />
+    <frame x="29" y="23" width="1400" height="873" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.50097466" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21214285" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.175" sideWeight="0.49902534" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21214285" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.175" sideWeight="0.49902534" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3283582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.50097466" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -261,12 +225,12 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/bindquery.h</url>
-          <line>113</line>
-          <option name="timeStamp" value="20" />
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>28</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="25" />
+      <option name="time" value="33" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
@@ -278,11 +242,90 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="450">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/query.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="11145" max-vertical-offset="14790">
+          <caret line="743" column="0" selection-start-line="743" selection-start-column="0" selection-end-line="743" selection-end-column="0" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#13#32#0" expanded="true" />
+            <element signature="e#11869#11885#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="32145" max-vertical-offset="63810">
+          <caret line="2143" column="0" selection-start-line="2143" selection-start-column="0" selection-end-line="2143" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/query.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="11145" max-vertical-offset="14790">
+          <caret line="743" column="0" selection-start-line="743" selection-start-column="0" selection-end-line="743" selection-end-column="0" />
+          <folding>
+            <element signature="e#13#32#0" expanded="true" />
+            <element signature="e#11869#11885#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="32145" max-vertical-offset="63810">
+          <caret line="2143" column="0" selection-start-line="2143" selection-start-column="0" selection-end-line="2143" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/query.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="11145" max-vertical-offset="14790">
+          <caret line="743" column="0" selection-start-line="743" selection-start-column="0" selection-end-line="743" selection-end-column="0" />
+          <folding>
+            <element signature="e#13#32#0" expanded="true" />
+            <element signature="e#11869#11885#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="32145" max-vertical-offset="63810">
+          <caret line="2143" column="0" selection-start-line="2143" selection-start-column="0" selection-end-line="2143" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="720">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -292,61 +335,35 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#13#32#0" expanded="true" />
-            <element signature="e#102#141#0" expanded="true" />
-            <element signature="e#336#369#0" expanded="true" />
-            <element signature="e#979#1066#0" expanded="true" />
-            <element signature="e#3497#3520#0" expanded="true" />
-            <element signature="e#3811#3827#0" expanded="true" />
-            <element signature="e#6357#6380#0" expanded="true" />
-            <element signature="e#6601#6708#0" expanded="true" />
-            <element signature="e#10063#10086#0" expanded="true" />
-            <element signature="e#10352#10372#0" expanded="true" />
-            <element signature="e#10504#10520#0" expanded="true" />
-            <element signature="e#10779#10823#0" expanded="true" />
-            <element signature="e#14164#14187#0" expanded="true" />
-            <element signature="e#14458#14478#0" expanded="true" />
-            <element signature="e#14663#14679#0" expanded="true" />
-            <element signature="e#15234#15341#0" expanded="true" />
-            <element signature="e#18761#18784#0" expanded="true" />
-            <element signature="e#20622#20642#0" expanded="true" />
-            <element signature="e#20904#20920#0" expanded="true" />
-            <element signature="e#21230#21402#0" expanded="true" />
-            <element signature="e#24715#24738#0" expanded="true" />
-            <element signature="e#25050#25074#0" expanded="true" />
-            <element signature="e#25305#25321#0" expanded="true" />
-            <element signature="e#25740#25764#0" expanded="true" />
-            <element signature="e#26203#26223#0" expanded="true" />
-            <element signature="e#26353#26373#0" expanded="true" />
-            <element signature="e#26516#26536#0" expanded="true" />
-            <element signature="e#26716#26737#0" expanded="true" />
-            <element signature="e#26958#26982#0" expanded="true" />
+            <element signature="e#11869#11885#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bindquery.h">
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="4845">
-          <caret line="48" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="32145" max-vertical-offset="63810">
+          <caret line="2143" column="0" selection-start-line="2143" selection-start-column="0" selection-end-line="2143" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="450">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/query.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#13#32#0" expanded="true" />
-            <element signature="e#590#623#0" expanded="true" />
-            <element signature="e#816#849#0" expanded="true" />
-            <element signature="e#969#1103#0" expanded="true" />
-            <element signature="e#6718#6741#0" expanded="true" />
-            <element signature="e#7096#7139#0" expanded="true" />
-            <element signature="e#7633#7649#0" expanded="true" />
-            <element signature="e#7759#7775#0" expanded="true" />
-            <element signature="e#8132#8148#0" expanded="true" />
+            <element signature="e#11869#11885#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/function_traits.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="645" max-vertical-offset="1035">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -354,7 +371,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -362,27 +378,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bindquery.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="4290">
-          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-          <folding>
-            <element signature="e#13#32#0" expanded="true" />
-            <element signature="e#590#623#0" expanded="true" />
-            <element signature="e#816#849#0" expanded="true" />
-            <element signature="e#969#1103#0" expanded="true" />
-            <element signature="e#6718#6741#0" expanded="true" />
-            <element signature="e#7096#7139#0" expanded="true" />
-            <element signature="e#7633#7649#0" expanded="true" />
-            <element signature="e#7759#7775#0" expanded="true" />
-            <element signature="e#8132#8148#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -390,7 +386,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="21240" max-vertical-offset="48780">
           <caret line="1416" column="0" selection-start-line="1416" selection-start-column="0" selection-end-line="1416" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -398,7 +393,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="17310" max-vertical-offset="23565">
           <caret line="1154" column="0" selection-start-line="1154" selection-start-column="0" selection-end-line="1154" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -406,7 +400,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -414,27 +407,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="510">
           <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bindquery.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#13#32#0" expanded="true" />
-            <element signature="e#590#623#0" expanded="true" />
-            <element signature="e#816#849#0" expanded="true" />
-            <element signature="e#969#1103#0" expanded="true" />
-            <element signature="e#6718#6741#0" expanded="true" />
-            <element signature="e#7096#7139#0" expanded="true" />
-            <element signature="e#7633#7649#0" expanded="true" />
-            <element signature="e#7759#7775#0" expanded="true" />
-            <element signature="e#8132#8148#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -442,7 +415,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -450,9 +422,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -460,7 +430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="34192" max-vertical-offset="80505">
           <caret line="2312" column="0" selection-start-line="2312" selection-start-column="0" selection-end-line="2312" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -468,7 +437,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="20902" max-vertical-offset="48585">
           <caret line="1416" column="0" selection-start-line="1416" selection-start-column="0" selection-end-line="1416" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -476,7 +444,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="17077" max-vertical-offset="23475">
           <caret line="1154" column="0" selection-start-line="1154" selection-start-column="0" selection-end-line="1154" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -484,84 +451,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="485">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="31822" max-vertical-offset="63630">
+          <caret line="2143" column="0" selection-start-line="2143" selection-start-column="0" selection-end-line="2143" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/function_traits.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="484" max-vertical-offset="1035">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bindquery.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="4845">
-          <caret line="48" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <element signature="e#13#32#0" expanded="true" />
-            <element signature="e#590#623#0" expanded="true" />
-            <element signature="e#816#849#0" expanded="true" />
-            <element signature="e#969#1103#0" expanded="true" />
-            <element signature="e#6718#6741#0" expanded="true" />
-            <element signature="e#7096#7139#0" expanded="true" />
-            <element signature="e#7633#7649#0" expanded="true" />
-            <element signature="e#7759#7775#0" expanded="true" />
-            <element signature="e#8132#8148#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/query.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="13114" max-vertical-offset="14220">
-          <caret line="902" column="0" selection-start-line="902" selection-start-column="0" selection-end-line="902" selection-end-column="0" />
-          <folding>
-            <element signature="e#13#32#0" expanded="true" />
-            <element signature="e#102#141#0" expanded="true" />
-            <element signature="e#336#369#0" expanded="true" />
-            <element signature="e#979#1066#0" expanded="true" />
-            <element signature="e#3497#3520#0" expanded="true" />
-            <element signature="e#3811#3827#0" expanded="true" />
-            <element signature="e#6357#6380#0" expanded="true" />
-            <element signature="e#6601#6708#0" expanded="true" />
-            <element signature="e#10063#10086#0" expanded="true" />
-            <element signature="e#10352#10372#0" expanded="true" />
-            <element signature="e#10504#10520#0" expanded="true" />
-            <element signature="e#10779#10823#0" expanded="true" />
-            <element signature="e#14164#14187#0" expanded="true" />
-            <element signature="e#14458#14478#0" expanded="true" />
-            <element signature="e#14663#14679#0" expanded="true" />
-            <element signature="e#15234#15341#0" expanded="true" />
-            <element signature="e#18761#18784#0" expanded="true" />
-            <element signature="e#20622#20642#0" expanded="true" />
-            <element signature="e#20904#20920#0" expanded="true" />
-            <element signature="e#21230#21402#0" expanded="true" />
-            <element signature="e#24715#24738#0" expanded="true" />
-            <element signature="e#25050#25074#0" expanded="true" />
-            <element signature="e#25305#25321#0" expanded="true" />
-            <element signature="e#25740#25764#0" expanded="true" />
-            <element signature="e#26203#26223#0" expanded="true" />
-            <element signature="e#26353#26373#0" expanded="true" />
-            <element signature="e#26516#26536#0" expanded="true" />
-            <element signature="e#26716#26737#0" expanded="true" />
-            <element signature="e#26958#26982#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34020618" vertical-offset="165" max-vertical-offset="705">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/query.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.1191406" vertical-offset="10240" max-vertical-offset="14835">
+          <caret line="755" column="8" selection-start-line="755" selection-start-column="8" selection-end-line="755" selection-end-column="8" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#13#32#0" expanded="true" />
+            <element signature="e#11869#11885#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
   </component>
 </project>
-

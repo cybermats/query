@@ -18,8 +18,6 @@ bool sort_pairs(
 }
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-
     std::string hello = "Hello, World!";
 
 
@@ -28,20 +26,10 @@ int main() {
 		>> zip_with(from_range_infinite(0))
 		>> orderby(sort_pairs, false)
 		>> select([](std::pair<char, int> item){return item.first; });
-//		>> select([](char i){return i; });
-
-	auto it = q.begin();
-	auto v = *it;
-	auto sit = ++it;
-
-
-
-
-    for(auto i : q)
-        std::cout << i << std::endl;
 
 	std::string rev(q.begin(), q.end());
-	std::cout << rev << std::endl;
+    std::cout << hello << std::endl;
+    std::cout << rev << std::endl;
 
     return 0;
 }

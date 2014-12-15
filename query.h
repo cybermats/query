@@ -415,7 +415,7 @@ namespace query {
 
         template<typename Query>
         where_query<Query, Predicate> build(const Query& query) const {
-            return where_query<typename Query, Predicate>(query, _pred);
+            return where_query<Query, Predicate>(query, _pred);
 
         }
     private:
@@ -559,10 +559,10 @@ namespace query {
         }
 
         template<typename Query>
-        select_query<typename Query, Generator>
+        select_query<Query, Generator>
         build(const Query& query) const {
 			return select_query<
-                    typename Query, Generator>(query, _generator);
+                    Query, Generator>(query, _generator);
         }
     private:
         Generator _generator;
